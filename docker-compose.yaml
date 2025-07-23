@@ -1,0 +1,23 @@
+services:
+  jupyter:
+    image: pbj-jupyterlab-python3.11-cuda:2025.06.1-b5
+    container_name: jupyterlab
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./workspace:/home/cdsw/workspace
+      - ./packages:/home/cdsw/packages
+    working_dir: /home/cdsw
+    command: >
+      jupyter lab
+      --ip=0.0.0.0
+      --port=8888
+      --no-browser
+      --allow-root
+      --NotebookApp.token=''
+      --NotebookApp.password=''
+    environment:
+      - TZ=Asia/Seoul
+      - PATH=/home/cdsw/.local/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/opt/conda/bin:/home/cdsw/inst/usr/bin
+      - LD_LIBRARY_PATH=/usr/local/nvidia/lib:/usr/local/nvidia/lib64:/home/cdsw/inst/usr/lib/x86_64-linux-gnu
+    restart: unless-stopped

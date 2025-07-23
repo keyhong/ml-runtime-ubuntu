@@ -1,0 +1,1 @@
+docker build -f pbj-jupyterlab-python3.11-cuda.Dockerfile -t pbj-jupyterlab-python3.11-cuda:2025.06.1-b5 .
