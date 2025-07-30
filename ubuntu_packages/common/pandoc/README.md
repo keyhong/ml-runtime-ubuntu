@@ -13,3 +13,6 @@ $ find /var/cache/apt/archives/ -maxdepth 1 -name "*.deb" -mmin -1 -exec mv -t /
 
 
 ```
+
+texlive-plain-generic_2023.20240207-1_all.deb
+pandoc_3.1.3+ds-2_amd64.deb
